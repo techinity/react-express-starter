@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+if (process.env.NODE_ENV === 'production') {
+  require('../__runtime__/server');
+} else {
+  require('../src/server');
+}

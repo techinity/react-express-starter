@@ -1,0 +1,71 @@
+{
+  "extends": [
+    "airbnb-base",
+    "plugin:react/recommended",
+    "plugin:import/react"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jasmine": true,
+    "jest": true
+  },
+  "globals": {},
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".json"]
+      }
+    }
+  },
+  "rules": {
+    "import/no-named-as-default": 0,
+    "import/prefer-default-export": 0,
+    "max-len": [
+      "error",
+      140,
+      2,
+      {
+        "ignoreUrls": true,
+        "ignoreComments": false,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "bin/www"
+      ],
+      "rules": {
+        "global-require": 0
+      }
+    },
+    {
+      "files": [
+        "app.development.jsx",
+        "**/*.spec.js?(x)",
+        "**/jest.setup.js",
+        "**/*.stories.js?(x)",
+        "**/webpack.*.js"
+      ],
+      "rules": {
+        "global-require": 0,
+        "import/no-extraneous-dependencies": 0
+      }
+    }
+  ]
+}
