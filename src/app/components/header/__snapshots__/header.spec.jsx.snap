@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`header component should render the component 1`] = `
+<header>
+  <nav>
+    <a
+      className="home-button header-button header-button-small"
+      href="/"
+    >
+      Header
+    </a>
+  </nav>
+</header>
+`;

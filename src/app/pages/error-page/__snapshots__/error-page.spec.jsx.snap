@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error-page component should render the component 1`] = `
+<Connect(Layout)
+  className="error-page page"
+>
+  <UNDEFINED>
+    <h1>
+      Page not found
+    </h1>
+    <div>
+      This page is either no longer available or or the URL has been entered incorrectly.
+    </div>
+  </UNDEFINED>
+</Connect(Layout)>
+`;
