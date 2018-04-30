@@ -23,19 +23,19 @@ This repo is indented to demonstrate connecting various frameworks and libraries
 Getting Started
 ---------------
 
-###Install node module dependencies
-
-```npm install```
-
-###Run dev server
-
-Launch the server HTTP server in development mode with automatic reloading:
-
-```npm run start```
-
-Launch a web browser:
-
-```http://localhost:3000/```
+  __Install node module dependencies__
+  
+  ```npm install```
+  
+  __Run dev server__
+  
+  Launch the server HTTP server in development mode with automatic reloading:
+  
+  ```npm run start```
+  
+  __Launch a web browser__
+  
+  ```http://localhost:3000/```
 
 
 Testing
@@ -62,3 +62,8 @@ Production
 Before running in production, ensure that the webpack bundle has been run.
 
 ```npm run start:prod```
+
+IDE Configuration
+-----------------
+
+• [Webstorm](docs/webstorm-run-configurations.md)
