@@ -1,6 +1,8 @@
 React Express Starter
 =====================
 
+[![Build Status](https://travis-ci.org/techinity/react-express-starter.svg?branch=master)](https://travis-ci.org/techinity/react-express-starter)
+
 React Express Starter app for Node 8 and above built with the following technologies:-
 
   * [React.js](https://facebook.github.io/react/)
