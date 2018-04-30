@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout component should render the component 1`] = `
+<div
+  className="layout"
+>
+  <Connect(Header) />
+  <main
+    className="main-content"
+  >
+    <div
+      className={undefined}
+    />
+  </main>
+  <Footer />
+</div>
+`;

@@ -2,6 +2,5 @@
 .idea
 __build__/
 __runtime__/
-__snapshots__/
 node_modules/
 solution.iml
