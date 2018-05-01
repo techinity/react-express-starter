@@ -5,8 +5,6 @@
   "description": "React Express Starter Kit",
   "main": "bin/www",
   "scripts": {
-    "prebundle": "npm run clean",
-    "bundle": "webpack --config ./webpack.config.js",
     "clean": "node_modules/.bin/rimraf ./__build__ ./__runtime__",
     "dev": "npm-run-all --parallel test:watch start:dev",
     "lint": "eslint --ext .jsx,.js src/",

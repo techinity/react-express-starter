@@ -51,19 +51,25 @@ Automatically watch files and rerun tests on change:-
 
 ```npm run test:watch```
 
-Bundling
---------
+Runtime
+-------
 
-Produces a static bundle of JavaScript and assets need on the client side. Required when running in production.
+For production, both client and server have their own static bundles.
 
-```npm run bundle```
+To build both bundles together:
+
+```npm run runtime```
 
 Production
 ----------
 
-Before running in production, ensure that the webpack bundle has been run.
+By default, `npm start` will detect which environment it is running in based on `NODE_ENV`. To force the application to start up
+in production mode, set the value `NODE_ENV=production` 
 
-```npm run start:prod```
+
+```NODE_ENV=production npm start```
+
+To run in a production environment, the `npm runtime` task must have been executed first.
 
 IDE Configuration
 -----------------
