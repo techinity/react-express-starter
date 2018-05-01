@@ -1,12 +1,10 @@
 {
   "name": "react-express-starter",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Express Starter Kit",
   "main": "bin/www",
   "scripts": {
-    "prebundle": "npm run clean",
-    "bundle": "webpack --config ./webpack.config.js",
     "clean": "node_modules/.bin/rimraf ./__build__ ./__runtime__",
     "dev": "npm-run-all --parallel test:watch start:dev",
     "lint": "eslint --ext .jsx,.js src/",
