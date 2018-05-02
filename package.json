@@ -13,6 +13,7 @@
     "start:development": "NODE_ENV=development DEBUG=server node_modules/nodemon/bin/nodemon.js bin/www",
     "start:production": "NODE_ENV=production bin/www",
     "test": "jest --config=jest.config.json",
+    "test:coverage": "npm test -- --coverage",
     "test:watch": "npm test -- --watch",
     "cp:nonjs": "rsync -a --prune-empty-dirs --include '*/' --include '*.gif' --include '*.handlebars' --include '*.ico' --include '*.jpg' --include '*.md' --include '*.png' --include '*.scss' --include '*.txt' --exclude '*' src/ __runtime__/",
     "cp:cleanscss": "find ./__runtime__/ -name *.scss -exec sed -e 's/.*//' {} +;",

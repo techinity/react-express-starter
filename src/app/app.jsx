@@ -12,7 +12,7 @@ const Router = isBrowser() ? ConnectedRouter : StaticRouter;
 
 const { ErrorPage } = pages;
 
-const App = ({ url, initialAppState, actions = {} }) => {
+const App = ({ url, initialAppState, actions }) => {
   const context = { router: { history: {} }, context: {} };
   const props = {
     location: url,
@@ -40,6 +40,7 @@ const App = ({ url, initialAppState, actions = {} }) => {
 
 App.propTypes = {
   actions: PropTypes.object.isRequired,
+  history: PropTypes.object,
   initialAppState: PropTypes.object.isRequired,
   url: PropTypes.string.isRequired,
 };
