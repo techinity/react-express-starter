@@ -4,3 +4,4 @@ __build__/
 __runtime__/
 node_modules/
 solution.iml
+coverage/
