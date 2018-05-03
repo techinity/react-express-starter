@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import App from '../app/app';
-import config from '../../config/webpack-common';
+import config from '../../config/webpack.common';
 import { serializeState } from '../utils/state-utils';
 
 // no need to include client side scripts

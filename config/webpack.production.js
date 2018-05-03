@@ -3,7 +3,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
-const commonConfig = require('./webpack-common');
+const commonConfig = require('./webpack.common');
 
 const GLOBALS = {
   'process.env': {
