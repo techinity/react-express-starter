@@ -6,7 +6,7 @@ import btoa from 'btoa';
  * @param state
  */
 export function serializeState(state) {
-  return btoa(JSON.stringify(state));
+  return (state && btoa(JSON.stringify(state))) || '';
 }
 
 /**
