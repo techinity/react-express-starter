@@ -7,6 +7,7 @@ import pages from './pages/index';
 import reduxStore from './redux/stores/redux-store';
 import history from './redux/stores/history';
 import { isBrowser } from '../utils/environment-utils';
+import './reset.scss';
 
 const Router = isBrowser() ? ConnectedRouter : StaticRouter;
 
