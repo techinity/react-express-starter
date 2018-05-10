@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import './header.scss';
+import logo from './logo.png';
 
 export class Header extends Component {
   render() {
@@ -11,6 +12,7 @@ export class Header extends Component {
       <header>
         <nav>
           <a href="/" className="home-button header-button header-button-small">
+            <img src={logo} alt="Site logo"/>
             Header
           </a>
         </nav>
