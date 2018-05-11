@@ -12,6 +12,7 @@
     }
   },
   "plugins": [
+    "inline-import-data-uri",
     "transform-class-properties"
   ],
   "presets": [
