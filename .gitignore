@@ -1,7 +1,5 @@
 .DS_Store
 .idea
-__build__/
-__runtime__/
+__*__/
 node_modules/
 solution.iml
-coverage/

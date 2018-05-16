@@ -2,6 +2,7 @@
   "setupFiles": [
     "./config/jest.setup.js"
   ],
+  "coverageDirectory": "__coverage__",
   "moduleNameMapper": {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/utils/file-mock.js",
     "\\.(css|less|s[ac]ss)$": "<rootDir>/src/utils/style-mock.js"
@@ -10,9 +11,8 @@
     "**/?(*.)spec.js?(x)"
   ],
   "testPathIgnorePatterns": [
-    "/__runtime__/",
-    "/node_modules/",
-    "/old/"
+    "__*__/",
+    "node_modules/"
   ],
   "verbose": true
 }

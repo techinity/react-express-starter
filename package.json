@@ -5,7 +5,7 @@
   "description": "React Express Starter Kit",
   "main": "bin/www",
   "scripts": {
-    "clean": "node_modules/.bin/rimraf ./__build__ ./__runtime__",
+    "clean": "node_modules/.bin/rimraf ./__*__",
     "dev": "npm-run-all --parallel test:watch start:dev",
     "lint": "eslint --ext .jsx,.js src/",
     "lint:fix": "npm run lint -- --fix",
@@ -23,7 +23,7 @@
     "runtime:client": "webpack --config ./webpack.config.js",
     "runtime:server": "npx babel src/server/index.js src/ --out-dir __runtime__ --source-maps && cp -r ./config ./__runtime__ && cp -r ./src/server/views ./__runtime__/server/views",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o __storybook__"
   },
   "author": "Allen Evans",
   "license": "MIT",
