@@ -4,11 +4,15 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import { renderToString } from 'react-dom/server';
 import App from '../app/app';
+import endpoints from './endpoints';
+import initialAppStateMiddleware from './middleware/initial-app-state-middleware';
 import { serializeState } from '../utils/state-utils';
 
 const config = require('../../webpack.config');
 
 module.exports = (app) => {
+  app.use(initialAppStateMiddleware);
+  endpoints(app);
   const compiler = webpack(config);
 
   app.use(webpackDevMiddleware(compiler, {

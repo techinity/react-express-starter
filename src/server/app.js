@@ -5,7 +5,6 @@ import express from 'express';
 import favicon from 'serve-favicon';
 import path from 'path';
 import errorHandler from './middleware/error-handler';
-import initialAppStateMiddleware from './middleware/initial-app-state-middleware';
 
 const app = express();
 
@@ -21,10 +20,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(initialAppStateMiddleware);
-require('./endpoints')(app);
-
 require(`./app.${process.env.NODE_ENV}`)(app);
+require('./app.storybook')(app);
 
 app.use(errorHandler);
 

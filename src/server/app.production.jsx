@@ -2,6 +2,8 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import App from '../app/app';
+import endpoints from './endpoints';
+import initialAppStateMiddleware from './middleware/initial-app-state-middleware';
 import { serializeState } from '../utils/state-utils';
 
 const isChunk = filename => /^\d+\.[0-9a-z]+\.bundle\.js$/i.test(filename);
@@ -15,6 +17,8 @@ const scripts = assets.filter(isScript);
 const chunks = assets.filter(isChunk);
 
 module.exports = (app) => {
+  app.use(initialAppStateMiddleware);
+  endpoints(app);
   // render view for react
   app.get(
     '*',

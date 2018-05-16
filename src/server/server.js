@@ -1,8 +1,5 @@
 require('dotenv').config();
 
-require.extensions['.scss'] = () => {};
-require.extensions['.svg'] = () => {};
-
 const Environment = require('../types/environment').default;
 
 process.env.NODE_ENV = process.env.NODE_ENV || Environment.PRODUCTION;
