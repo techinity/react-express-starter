@@ -11,7 +11,10 @@
     "**/?(*.)spec.js?(x)"
   ],
   "testPathIgnorePatterns": [
-    "__*__/",
+    "__build__/",
+    "__coverage__/",
+    "__runtime__/",
+    "__storybook__/",
     "node_modules/"
   ],
   "verbose": true

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`header component should render the component 1`] = `
+exports[`SiteHeader component should render the component 1`] = `
 <header>
   <nav>
     <a

@@ -4,7 +4,7 @@ exports[`Layout component should render the component 1`] = `
 <div
   className="layout"
 >
-  <Connect(Header) />
+  <Connect(SiteHeader) />
   <main
     className="main-content"
   >

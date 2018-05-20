@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import './layout.scss';
 import Footer from '../components/footer/footer';
-import Header from '../components/header/header';
+import Header from '../components/site-header/site-header';
 import { windowResize } from '../redux/actions/ui/ui-actions';
 
 export class Layout extends Component {
