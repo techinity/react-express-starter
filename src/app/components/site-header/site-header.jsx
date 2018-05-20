@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import './header.scss';
+import './site-header.scss';
 import logo from './logo.png';
 
-export class Header extends Component {
+export class SiteHeader extends Component {
   render() {
     return (
       <header>
@@ -29,8 +29,8 @@ const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({ }, dispatch),
 });
 
-Header.propTypes = {
+SiteHeader.propTypes = {
   actions: PropTypes.object.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(SiteHeader);

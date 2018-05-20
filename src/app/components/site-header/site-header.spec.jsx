@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactShallowRenderer from 'react-test-renderer/shallow';
-import { Header } from './header';
+import { SiteHeader } from './site-header';
 
 const renderer = new ReactShallowRenderer();
 
-describe('header component', () => {
+describe('SiteHeader component', () => {
   it('should render the component', () => {
     const actions = {};
 
-    const tree = renderer.render(<Header actions={actions}/>);
+    const tree = renderer.render(<SiteHeader actions={actions}/>);
 
     expect(tree).toMatchSnapshot();
   });
