@@ -1,1 +1,126 @@
-header { }
+@import '../../../client/breakpoints';
+@import '../../../client/colors';
+@import '../../../client/variables';
+
+.site-header {
+  $MOBILE_HEIGHT: 3rem;
+  $TABLET_HEIGHT: 4rem;
+  $PEEK_HEIGHT: 1rem;
+
+  display: flex;
+  flex: 1 0 100%;
+  height: $MOBILE_HEIGHT;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: top 0.5s;
+
+  background: $white-color;
+
+  &:before, &:after {
+    content: ' ';
+    width: $GUTTER_WIDTH_MOBILE;
+
+    @include for-tablet-portrait-up {
+      width: $GUTTER_WIDTH_TABLET;
+    }
+  }
+
+  & > * {
+    flex: 1;
+  }
+
+  nav {
+    display: flex;
+
+    & > * {
+      flex: 1;
+    }
+  }
+
+  &--peek {
+    top: -$MOBILE_HEIGHT + $PEEK_HEIGHT;
+  }
+
+  @include for-tablet-portrait-up {
+    height: $TABLET_HEIGHT;
+
+    &--peek {
+      top: -$TABLET_HEIGHT + $PEEK_HEIGHT;
+    }
+  }
+
+  &__header-logo {
+    color: $text-color;
+    display: flex;
+    align-items: center;
+    font-family: 'Philosopher';
+    font-size: $MOBILE_HEIGHT * .66;
+    line-height: $MOBILE_HEIGHT;
+    text-decoration: none;
+    &--italic {
+      font-style: italic;
+    }
+
+    @include for-tablet-portrait-up {
+      font-size: $TABLET_HEIGHT * .66;
+      line-height: $TABLET_HEIGHT;
+    }
+  }
+
+  &__image-logo {
+    flex: 0;
+    max-height: $MOBILE_HEIGHT / 1.5;
+
+    @include for-tablet-portrait-up {
+      max-height: $TABLET_HEIGHT / 1.5;
+    }
+  }
+
+  @include for-phone-only {
+    .site-header__menu-nav {
+      flex-wrap: wrap;
+      position: absolute;
+
+      & > a {
+        flex: 1 0 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    #burger-menu-button__toggle ~ .site-header__menu-nav {
+      visibility: hidden;
+    }
+
+    #burger-menu-button__toggle:checked ~ .site-header__menu-nav {
+      visibility: visible;
+      height: auto;
+      background-color: transparentize($white-color, 0.1);
+      right: 0;
+      top: $MOBILE_HEIGHT;
+      width: 100%;
+    }
+  }
+
+  @include for-tablet-portrait-up {
+    .burger-menu-button__label, .burger-menu-button__toggle {
+      display: none;
+    }
+
+    .site-header__menu-nav {
+      flex: 1;
+      height: 100%;
+      align-items: center;
+
+      & > a {
+        height: 100%;
+        text-align: center;
+        line-height: $TABLET_HEIGHT;
+      }
+    }
+  }
+}

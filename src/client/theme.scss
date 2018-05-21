@@ -1,0 +1,14 @@
+@import './colors';
+
+a {
+  color: $text-color;
+
+  &:visited {
+    color: $text-color;
+  }
+
+  &:hover {
+    color: $link-hover-foreground-color;
+    background-color: $link-hover-background-color;
+  }
+}

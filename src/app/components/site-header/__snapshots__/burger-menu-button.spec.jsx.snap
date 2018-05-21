@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`burger-menu-button component should render the component 1`] = `
+<UNDEFINED>
+  <label
+    className="burger-menu-button__label"
+    htmlFor="burger-menu-button__toggle"
+    onClick={[Function]}
+  />
+  <input
+    checked={false}
+    className="burger-menu-button__toggle"
+    id="burger-menu-button__toggle"
+    type="checkbox"
+  />
+</UNDEFINED>
+`;

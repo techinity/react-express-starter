@@ -1,8 +1,8 @@
 /* eslint-disable import/no-named-as-default */
-import Header from './site-header/site-header';
+import SiteHeader from './site-header/site-header';
 import Footer from './footer/footer';
 
 export default {
-  Header,
+  SiteHeader,
   Footer,
 };
