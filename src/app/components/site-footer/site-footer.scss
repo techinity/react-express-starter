@@ -1,0 +1,12 @@
+@import '../../../client/breakpoints';
+@import '../../../client/variables';
+
+.site-footer {
+  flex: 0 0 auto;
+  text-align: center;
+
+  padding: .5rem $GUTTER_WIDTH_MOBILE;
+  @include for-tablet-portrait-up {
+    padding: 1rem $GUTTER_WIDTH_TABLET;
+  }
+}
