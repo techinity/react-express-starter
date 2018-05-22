@@ -1,0 +1,20 @@
+@import '../../../client/colors';
+
+.burger-menu-button {
+  &__label {
+    background: linear-gradient(to bottom, $black-color 0%, $black-color 10%, transparent 10%, transparent 45%, $black-color 45%, $black-color 60%, transparent 60%, transparent 90%, $black-color 90%, $black-color 100%); //Gradient Hamburger
+    border: 1px solid transparent;
+    cursor: pointer;
+    max-height: 1rem;
+    max-width: 1.5rem;
+
+    &:before {
+      content: ' ';
+      padding: 1rem;
+    }
+  }
+
+  &__toggle {
+    display: none;
+  }
+}
