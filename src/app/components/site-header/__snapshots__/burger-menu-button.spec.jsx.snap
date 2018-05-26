@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`burger-menu-button component should render the component 1`] = `
-<UNDEFINED>
+<React.Fragment>
   <label
     className="burger-menu-button__label"
     htmlFor="burger-menu-button__toggle"
@@ -13,5 +13,5 @@ exports[`burger-menu-button component should render the component 1`] = `
     id="burger-menu-button__toggle"
     type="checkbox"
   />
-</UNDEFINED>
+</React.Fragment>
 `;

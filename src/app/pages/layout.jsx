@@ -30,6 +30,12 @@ Layout.propTypes = {
   className: PropTypes.string,
 };
 
+Layout.defaultProps = {
+  actions: {},
+  children: [],
+  className: '',
+};
+
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({
     windowResize,
