@@ -4,13 +4,13 @@ exports[`error-page component should render the component 1`] = `
 <Connect(Layout)
   className="error-page page"
 >
-  <UNDEFINED>
+  <React.Fragment>
     <h1>
       Page not found
     </h1>
     <div>
       This page is either no longer available or or the URL has been entered incorrectly.
     </div>
-  </UNDEFINED>
+  </React.Fragment>
 </Connect(Layout)>
 `;
