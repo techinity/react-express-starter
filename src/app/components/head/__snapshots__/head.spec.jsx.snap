@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`head component should render the component without the page context 1`] = `
+<head>
+  <meta
+    content="IE=edge"
+    httpEquiv="X-UA-Compatible"
+  />
+  <meta
+    charSet="utf-8"
+  />
+  <meta
+    content="width=device-width, initial-scale=1.0"
+    name="viewport"
+  />
+</head>
+`;

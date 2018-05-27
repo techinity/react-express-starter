@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import './error-page.scss';
 import Layout from '../layout';
+import { PageContext } from '../../contexts/page-context/page-context';
 
 const errors = {
   404: {
@@ -13,12 +14,15 @@ const errors = {
 const displayError = (errorCode) => {
   const error = errors[errorCode.toString()];
 
-  return (
-    <Fragment>
-      <h1>{error.title}</h1>
-      <div>{error.desc}</div>
-    </Fragment>
-  );
+  return <Fragment>
+    <PageContext.Consumer>{({ head, statusCode }) => {
+      head(<title>Error page</title>);
+      statusCode(errorCode);
+    }}</PageContext.Consumer>
+
+    <h1>{error.title}</h1>
+    <div>{error.desc}</div>
+  </Fragment>;
 };
 
 export const ErrorPage = () => (

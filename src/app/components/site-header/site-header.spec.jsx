@@ -2,9 +2,10 @@ import React from 'react';
 import ReactShallowRenderer from 'react-test-renderer/shallow';
 import { SiteHeader } from './site-header';
 
-const renderer = new ReactShallowRenderer();
 
 describe('SiteHeader component', () => {
+  const renderer = new ReactShallowRenderer();
+
   it('should render the component', () => {
     const actions = {};
 

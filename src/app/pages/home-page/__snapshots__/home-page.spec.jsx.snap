@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HomePage component should render the component 1`] = `
-<Connect(Layout)
-  className="home-page page"
->
-  <h1>
-    React Express Starter
-  </h1>
-</Connect(Layout)>
+<Context.Consumer>
+  [Function]
+</Context.Consumer>
 `;

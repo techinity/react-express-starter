@@ -3,9 +3,9 @@ import ReactShallowRenderer from 'react-test-renderer/shallow';
 import { shallow } from 'enzyme';
 import BurgerMenuButton from './burger-menu-button';
 
-const renderer = new ReactShallowRenderer();
-
 describe('burger-menu-button component', () => {
+  const renderer = new ReactShallowRenderer();
+
   it('should render the component', () => {
     const tree = renderer.render(<BurgerMenuButton />);
 
