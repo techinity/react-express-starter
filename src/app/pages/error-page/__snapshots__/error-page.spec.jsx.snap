@@ -5,6 +5,9 @@ exports[`error-page component should render the component 1`] = `
   className="error-page page"
 >
   <React.Fragment>
+    <Context.Consumer>
+      [Function]
+    </Context.Consumer>
     <h1>
       Page not found
     </h1>

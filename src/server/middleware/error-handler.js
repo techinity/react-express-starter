@@ -6,5 +6,5 @@ export default function errorHandler(err, req, res, next) {
     detail: process.env.NODE_ENV === 'development' ? err.stack : err.message,
   });
 
-  next();
+  next(err);
 }

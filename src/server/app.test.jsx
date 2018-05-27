@@ -1,10 +1,11 @@
 import React from 'react';
-import { renderToString } from 'react-dom/server';
+import { renderToNodeStream, renderToStaticMarkup } from 'react-dom/server';
 import App from '../app/app';
-import config from '../../config/webpack.common';
 import endpoints from './endpoints';
 import initialAppStateMiddleware from './middleware/initial-app-state-middleware';
 import { serializeState } from '../utils/state-utils';
+import Html from './views/html';
+import { PageContext } from '../app/contexts/page-context/page-context';
 
 // no need to include client side scripts
 const styles = [];
@@ -19,16 +20,28 @@ module.exports = (app) => {
   app.get(
     '*',
     (req, res) => {
-      const data = {
-        app: renderToString(<App url={req.url}
-                                 actions={{ setStatusCode: (statusCode) => { res.statusCode = statusCode; } }}
-                                 initialAppState={req.initialAppState} />),
-        initialState: serializeState(req.initialAppState),
-        publicPath: config.output.publicPath,
-        scripts: [...scripts, ...chunks],
-        styles,
-      };
-      res.render('index', data);
+      const initialState = serializeState(req.initialAppState);
+      const bridge = PageContext.bridge({ request: req, response: res });
+
+      bridge.head(...styles.map(style => <link rel="stylesheet" type="text/css" href={style} key={style} />));
+      bridge.body(
+        <script type="text/javascript" dangerouslySetInnerHTML={ { __html: `window.__state__='${initialState}';` } } />,
+        ...[...scripts, ...chunks].map(script => <script type="text/javascript" src={script} key={script} />),
+      );
+
+      const markup = renderToStaticMarkup(<PageContext.Provider value={bridge}>
+        <App
+          url={req.url}
+          initialAppState={req.initialAppState}/>
+      </PageContext.Provider>);
+
+      res.write('<!DOCTYPE html>\n');
+      const stream = renderToNodeStream(<PageContext.Provider value={bridge}>
+        <Html {...{ markup }} />
+      </PageContext.Provider>);
+
+      stream.pipe(res, { end: false });
+      return stream.on('end', () => res.end());
     },
   );
 };

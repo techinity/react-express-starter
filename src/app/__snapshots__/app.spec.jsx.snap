@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app should render the app 1`] = `
+<div
+  className="layout"
+>
+  <header
+    className="site-header"
+  >
+    <nav>
+      <a
+        className="site-header__header-logo"
+        href="/"
+        onClick={[Function]}
+      >
+        <img
+          alt="Site logo"
+          className="site-header__image-logo"
+          src="data:image/png;base64,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"
+        />
+        Header
+      </a>
+    </nav>
+    <label
+      className="burger-menu-button__label"
+      htmlFor="burger-menu-button__toggle"
+      onClick={[Function]}
+    />
+    <input
+      checked={false}
+      className="burger-menu-button__toggle"
+      id="burger-menu-button__toggle"
+      type="checkbox"
+    />
+    <nav
+      className="site-header__menu-nav"
+    >
+      <a
+        href="/about"
+        onClick={[Function]}
+      >
+        About
+      </a>
+    </nav>
+  </header>
+  <main
+    className="main-content"
+  >
+    <div
+      className="home-page page"
+    >
+      <h1>
+        React Express Starter
+      </h1>
+    </div>
+  </main>
+  <footer
+    className="site-footer"
+  >
+    Footer
+  </footer>
+</div>
+`;

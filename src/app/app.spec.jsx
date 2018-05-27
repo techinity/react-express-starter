@@ -1,15 +1,18 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import ReactRenderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import { createMemoryHistory } from 'history';
 import { StaticRouter } from 'react-router-dom';
 
 describe('app', () => {
   let mockIsBrowser = null;
+  let mockIsNode = null;
   let mockHistory = null;
   let mockConnectedRouter = null;
 
   beforeEach(() => {
     mockIsBrowser = jest.fn();
+    mockIsNode = jest.fn();
     mockHistory = jest.fn();
     mockConnectedRouter = StaticRouter;
 
@@ -27,6 +30,7 @@ describe('app', () => {
 
     jest.mock('../utils/environment-utils', () => ({
       isBrowser: mockIsBrowser,
+      isNode: mockIsNode,
     }));
 
     jest.mock('./redux/stores/history', () => ({
@@ -43,14 +47,14 @@ describe('app', () => {
       initialAppState: {},
       url: '/',
     };
-    const wrapper = mount(<App {...props} />);
 
-    expect(wrapper.find('h1').length).toBe(1);
-    expect(wrapper.find('h1').text()).toBe('React Express Starter');
+    const wrapper = ReactRenderer.create(<App {...props} />);
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should use browser history when running in a browser', () => {
     mockIsBrowser.mockReturnValue(true);
+    mockIsNode.mockReturnValue(false);
     mockHistory.mockReturnValue(createMemoryHistory('/'));
 
     const App = require('./app').default;
