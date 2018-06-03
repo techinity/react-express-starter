@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
-import { Viewport, withViewport } from '@storybook/addon-viewport/preview';
-import devices from '../../../../config/supported-devices';
+import { withViewport } from '@storybook/addon-viewport/preview';
 import { SiteFooter } from './site-footer';
 
 const siteFooterStories = storiesOf('Site Footer', module);
@@ -27,14 +26,14 @@ const styleBlock = <style type="text/css">{`
 `}
 </style>;
 
-devices.forEach(device => siteFooterStories
-  .addDecorator(withViewport(device))
+siteFooterStories
+  .addDecorator(withViewport())
   .addDecorator(story => <MemoryRouter>{story()}</MemoryRouter>)
-  .add(`Page footer (${device})`, () => <Viewport>
+  .add('Default footer', () => <React.Fragment>
     {styleBlock}
 
     <div id="container">
       <div className="content">Footer at the bottom of the page</div>
-      <SiteFooter />
+      <SiteFooter/>
     </div>
-  </Viewport>));
+  </React.Fragment>);
