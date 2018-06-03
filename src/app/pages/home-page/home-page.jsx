@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -16,9 +15,7 @@ export const HomePage = () => (
   }}</PageContext.Consumer>
 );
 
-HomePage.propTypes = {
-  shell: PropTypes.object,
-};
+HomePage.propTypes = {};
 
 /* istanbul ignore next */
 const mapStateToProps = () => ({});

@@ -1,24 +1,23 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
-import { Viewport, withViewport } from '@storybook/addon-viewport/preview';
+import { withViewport } from '@storybook/addon-viewport/preview';
 import { SiteHeader } from './site-header';
-import devices from '../../../../config/supported-devices';
 
 const siteHeaderStories = storiesOf('Site Header', module);
 
-devices.forEach(device => siteHeaderStories
-  .addDecorator(withViewport(device))
+siteHeaderStories
+  .addDecorator(withViewport())
   .addDecorator(story => <MemoryRouter>
     {story()}
   </MemoryRouter>)
-  .add(`${device}`, () => {
+  .add('Default header', () => {
     const containerStyle = {
       minHeight: '200vh',
       display: 'block',
     };
 
-    return <Viewport>
+    return <React.Fragment>
       <style type="text/css">{`
           body {
             background-color: #ccc;
@@ -27,5 +26,5 @@ devices.forEach(device => siteHeaderStories
       <div style={containerStyle} id="container">
         <SiteHeader actions={{}}/>
       </div>
-    </Viewport>;
-  }));
+    </React.Fragment>;
+  });
