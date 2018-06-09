@@ -37,6 +37,10 @@ export class Bridge {
   }
 
   statusCode = (code) => {
-    this.context.response.status(code);
+    if (code) {
+      this.context.response.status(code);
+    }
+
+    return this.context.response.statusCode;
   }
 }

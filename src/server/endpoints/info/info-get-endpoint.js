@@ -5,7 +5,8 @@ endpoint.get('/info', (req, res) => {
   res.json({
     name,
     version,
-  });
+  })
+    .end();
 });
 
 module.exports = endpoint;

@@ -5,7 +5,7 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import appMiddleware from '../middleware';
 import history from './history';
-import loggerMiddleware from '../middleware/logger-middleware';
+import loggerMiddleware from '../middleware/logger/logger-middleware';
 import rootReducer from '../reducers';
 
 export default function developmentStore(initialState = {}) {
