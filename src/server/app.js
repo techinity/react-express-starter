@@ -4,7 +4,8 @@ import cookieParser from 'cookie-parser';
 import express from 'express';
 import favicon from 'serve-favicon';
 import path from 'path';
-import errorHandler from './middleware/error-handler';
+import errorHandler from './middleware/error-handler/fallback-error-handler-middleware';
+import initialAppStateMiddleware from './middleware/initial-app-state/initial-app-state-middleware';
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(initialAppStateMiddleware);
 
 require(`./app.${process.env.NODE_ENV}`)(app);
 require('./app.storybook')(app);

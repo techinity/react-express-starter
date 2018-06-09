@@ -7,12 +7,8 @@ import './index.scss';
 import { deserializeState } from '../utils/state-utils';
 import { PageContext } from '../app/contexts/page-context/page-context';
 
-const actions = {
-  setStatusCode: () => {},
-};
-
 const initialState = {
-  ...initialAppState,
+  ...initialAppState(),
   ...deserializeState(window.__state__),
 };
 
@@ -23,7 +19,7 @@ const bridge = PageContext.bridge(window);
 document.addEventListener('DOMContentLoaded', () => {
   hydrate(
     <PageContext.Provider value={bridge}>
-      <App url={window.location.href} actions={actions} initialAppState={initialState}/>
+      <App url={window.location.href} initialAppState={initialState}/>
     </PageContext.Provider>,
     document.querySelector('#app'),
   );

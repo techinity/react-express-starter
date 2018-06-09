@@ -1,7 +1,12 @@
-import UiState from '../../../entities/ui-state';
-
-const initialAppState = {
-  ui: new UiState(),
-};
+const initialAppState = () => ({
+  server: {
+    error: null,
+    renderPath: null,
+  },
+  ui: {
+    windowHeight: 0,
+    windowWidth: 0,
+  },
+});
 
 export default initialAppState;
