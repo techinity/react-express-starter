@@ -40,5 +40,5 @@ RUN addgroup www; \
 
 USER nodeusr:www
 
-CMD ["npm", "run", "start:production"]
+CMD ["npm", "run", "start"]
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -16,7 +16,7 @@
     "test:coverage": "npm test -- --coverage",
     "test:watch": "npm test -- --watch",
     "cp:nonjs": "rsync -a --prune-empty-dirs --include '*/' --include '*.gif' --include '*.ico' --include '*.jpg' --include '*.md' --include '*.png' --include '*.scss' --include '*.txt' --exclude '*' src/ __runtime__/",
-    "cp:cleanscss": "find ./__runtime__/ -name *.scss -exec sed -e 's/.*//' {} +;",
+    "cp:cleanscss": "find ./__runtime__/ -name *.scss -exec sed -e 's/.*//' {} + 1> /dev/null;",
     "cp:build": "cp ./__build__/* ./__runtime__/public",
     "preruntime": "npm run clean",
     "runtime": "npm run cp:nonjs && npm run cp:cleanscss; npm run runtime:client; npm run runtime:server; npm run cp:build;",
